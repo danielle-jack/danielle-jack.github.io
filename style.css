@@ -1,0 +1,458 @@
+/* --- Global Styles --- */
+:root {
+    --bg-cream: #FFFBF5; 
+    --primary-text: #39505c;
+    --accent-red: #71AEC9; 
+    --card-bg: #FFFFFF;
+    --soft-shadow: 0 10px 30px rgba(106, 169, 211, 0.247);
+    --border-radius: 20px;
+}
+
+body {
+    background-image: url('Files/bg.jpg');
+    
+    /* Width = 100%, Height = Auto (keeps proportions) */
+    background-size: 100% auto; 
+    
+    /* Starts at the top */
+    background-position: top center;
+    
+    background-repeat: no-repeat;
+    
+    /* Allows the image to scroll */
+    background-attachment: scroll;
+    
+    color: var(--primary-text);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+a { text-decoration: none; transition: 0.3s; }
+
+/* --- Navigation [cite: 1, 61] --- */
+/* --- Navigation Updates --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    
+    /* 1. Make it fixed so it stays at the top while scrolling */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures it stretches across the screen */
+    box-sizing: border-box; /* Ensures padding doesn't break the width */
+    z-index: 1000; /* Keeps it on top of images */
+
+    /* 2. Initial State: Transparent with no border */
+    background-color: transparent; 
+    border-bottom: 2px solid transparent; 
+    
+    /* 3. Smooth transition for the effect */
+    transition: all 0.3s ease-in-out;
+}
+
+/* This is the class Javascript will add when you scroll down */
+nav.scrolled {
+    /* Keep background transparent (or add slight blur for readability) */
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); /* Optional: blurs the image behind the text */
+    
+    /* The Outline you requested */
+    border-bottom: 2px solid var(--accent-red); 
+}
+
+/* Ensure links are readable against your background image */
+.nav-links a { 
+    color: var(--primary-text); /* Change to #fff if your background image is dark */
+    font-weight: 600; 
+}
+
+.logo { font-weight: 700; font-size: 1.2rem; }
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a { color: var(--primary-text); font-weight: 500; }
+.nav-links a:hover { color: var(--accent-red); }
+
+.btn-resume {
+    background-color: var(--primary-text);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+/* --- SECTIONS: Massive Padding Added Here --- */
+section {
+    padding: 100px 10%; /* Creates the large gaps seen in PDF */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Hero Section [cite: 6-11] --- */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70vh; /* Takes up most of the screen */
+}
+
+.greeting-badge {
+    background: #E8F0FE;
+    color: #4285F4;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#hero h1 { font-size: 3rem; line-height: 1.2; }
+.subtitle { font-size: 1.2rem; color: #666; margin-bottom: 30px; }
+
+.cta-buttons { display: flex; gap: 15px; }
+
+.btn-primary {
+    background: var(--primary-text);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-text);
+    border: 1px solid var(--primary-text);
+    padding: 12px 30px;
+    border-radius: 8px;
+}
+
+.profile-circle {
+    width: 350px;
+    height: 350px;
+    background-color: #eee;
+    border-radius: 50%;
+    /* This mimics the sketch in your PDF Page 1 */
+    border: 2px solid #333; 
+}
+
+/* --- Profile Image Styling --- */
+.profile-img {
+    width: 350px;        /* Keeps the size large */
+    height: 350px;       /* Keeps it a perfect square box */
+    border-radius: 50%;  /* Turns the square box into a circle */
+    
+    /* CRITICAL: This crops the photo to fill the circle without distorting */
+    object-fit: cover;   
+    
+    /* Optional: Positions the face better if the top is getting cut off */
+    object-position: center top; 
+    
+    /* Matches your border style */
+    border: 2px solid #333; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Adds a little pop */
+}
+
+/* --- About Section [cite: 12-18] --- */
+#about h2 { font-size: 2.5rem; margin-bottom: 40px; }
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.education-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--soft-shadow);
+}
+
+/* --- Skills Section  --- */
+/* Designed to look like the square cards on Page 3 */
+/* --- Skills Section Fixed --- */
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap between cards */
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    width: 220px;  /* Increased width so text doesn't squish */
+    height: 220px; /* Square shape */
+    display: flex;
+    flex-direction: column; /* KEY FIX: Stacks items vertically */
+    justify-content: center; /* Centers content vertically in the box */
+    align-items: center;     /* Centers content horizontally */
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--soft-shadow);
+    padding: 25px;
+    gap: 15px; /* Adds clean space between the Header and the List */
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* subtle lift effect */
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--accent-red); /* Uses your FSU maroon for the header */
+    border-bottom: 2px solid #eee; /* Optional: adds a small separator line */
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.skill-card p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Projects Section [cite: 85-93] --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+    transition: transform 0.2s;
+}
+
+.project-card:hover { transform: translateY(-5px); }
+
+/* --- Project Grid Thumbnail Images --- */
+
+/* 1. Common Settings for All Thumbnails */
+.project-thumbnail {
+    height: 200px;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #ddd; /* Gray fallback if image fails */
+    border-bottom: 1px solid #eee;
+}
+
+/* 2. Specific Images for Each Card */
+
+.thumbnail-draw {
+    background-image: url('Files/drawdrills_main.png');
+}
+
+.thumbnail-fsu {
+    background-image: url('Files/nolescore_landing.jpg');
+}
+
+.thumbnail-chronic {
+    background-image: url('chronic-compass.jpg');
+}
+
+.thumbnail-stem {
+    background-image: url('stem-pathfinder.jpg');
+}
+
+.thumbnail-lofty {
+    background-image: url('lofty-pursuits.jpg');
+}
+
+.thumbnail-code {
+    background-image: url('bitbucket-code.jpg');
+}
+
+.thumbnail-vr {
+    background-image: url('vr-unity.jpg');
+}
+
+.thumbnail-folio {
+    background-image: url('Files/folio_design.jpg');
+}
+
+.project-info { padding: 25px; }
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+/* --- Contact Section [cite: 47-60] --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    font-family: inherit;
+}
+
+/* --- Footer [cite: 57-58] --- */
+footer {
+    text-align: center;
+    padding: 50px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* --- New Additions for Projects Page --- */
+
+/* Center Button Container */
+.center-btn-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Secondary Button Style */
+.btn-secondary {
+    background: transparent;
+    color: var(--accent-red);
+    border: 2px solid var(--accent-red);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-red);
+    color: white;
+}
+
+/* Archive Hero */
+#all-projects-hero {
+    text-align: center;
+    padding: 80px 10%;
+    background-color: transparent;
+}
+
+/* Full Grid Layout */
+.projects-grid-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 0 10% 100px 10%;
+}
+
+.tags {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mini Contact Section */
+#contact-mini {
+    text-align: center;
+    background-color: transparent; /* Light blue accent */
+    padding: 80px 20px;
+}
+
+/* --- Modal (Popup) Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 2000; /* Sits on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Modern blur effect */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px; /* Max width of popup */
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    text-align: left;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-btn:hover { color: var(--accent-red); }
+
+/* Modal Content Styling */
+.modal-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-color: #eee; /* Fallback color if image missing */
+}
+
+.modal-tech-stack {
+    color: var(--accent-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#modalDesc {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
