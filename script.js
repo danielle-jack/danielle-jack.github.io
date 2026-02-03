@@ -27,7 +27,7 @@ function openModal(card) {
         modalImg.style.display = "block";
     } else {
         // If no image, hide the image tag or show a placeholder color
-        modalImg.style.display = "none"; 
+        modalImg.style.display = "none";
     }
 
     // 3. Show the modal

@@ -34,7 +34,7 @@
                 data-image="Files/drawdrills_main.png" 
                 data-tech="UX Research • Figma • Prototyping"
                 data-desc="DrawDrills is a web-based application prototype designed to help artists improve their speed and creativity through structured, timed practice drills. Developed for the LIS4351 User Experience Design course, the project focused on refining the user experience by adding features like randomized prompts and community sharing, showcasing skills in user research, responsive UI design, and strategic product planning."
-                data-link="https://tinyurl.com/3n9b9sce">
+                data-link="draw-drills.html">
                 
                 <div class="project-thumbnail thumbnail-draw"></div>
                 <div class="project-info">
@@ -44,6 +44,7 @@
                 </div>
             </article>
 
+            <!-- NoleScore App -->
             <article class="project-card" 
                 onclick="openModal(this)" 
                 data-title="NoleScore App"
@@ -80,7 +81,7 @@
             <article class="project-card"
                 onclick="openModal(this)"
                 data-title="The Chronic Compass"
-                data-image="chronic-compass.jpg"
+                data-image="Files/cc_security.png"
                 data-tech="Health Informatics • Mobile App Design • Gamification"
                 data-desc="A mobile health app designed to improve adherence for chronic conditions. Features include AI-driven personalization, gamification (missions/avatars), and a centralized health data hub for logging medication and vitals."
                 data-link="#">
@@ -92,10 +93,18 @@
                 </div>
             </article>
 
-            <article class="project-card">
+            <!-- VR Environment Design -->
+            <article class="project-card"
+                onclick="openModal(this)"
+                data-title="VR Game Design"
+                data-image="Files/vr_terrain.png"
+                data-tech="Web Design • Content Strategy • WordPress"
+                data-desc="Created an immersive horror game for VR with custom terrain and programmed entity behaviors in C#. Inspired by classic horror games like Slenderman."
+                data-link="#">
+                    
                 <div class="project-thumbnail thumbnail-vr"></div>
                 <div class="project-info">
-                    <h3>VR Environment Design</h3>
+                    <h3>VR Game Design</h3>
                     <p class="tags">Unity • C# • 3D Design</p>
                     <p>Developed immersive virtual reality environments using Unity as part of advanced IT coursework.</p>
                 </div>
@@ -118,13 +127,14 @@
                 </div>
             </article>
 
+            <!--STEM Pathfinder AI Site -->
             <article class="project-card"
                 onclick="openModal(this)"
                 data-title="STEM Pathfinder AI Redesign"
-                data-image="stem-pathfinder.jpg"
+                data-image="Files/stempathfinderai.png"
                 data-tech="Web Design • Content Strategy • WordPress"
                 data-desc="Redesigned a STEM resource site to engage middle/high school students. Implemented a 'Career Quiz', educational roadmaps, and embedded video resources. Achieved 100% feature readiness."
-                data-link="https://stempathfinderai.wordpress.com/">
+                data-link="#">
                     
                 <div class="project-thumbnail thumbnail-stem"></div>
                 <div class="project-info">
@@ -138,7 +148,7 @@
             <article class="project-card"
                 onclick="openModal(this)"
                 data-title="Lofty Pursuits Redesign"
-                data-image="lofty-pursuits.jpg"
+                data-image="Files/lofty_main.png"
                 data-tech="Info Architecture • Wireframing • User Research"
                 data-desc="Overhauled the information architecture for a local business to fix navigation pain points. Designed new user flows for party bookings, updated the menu layout, and modernized the visual style."
                 data-link="#">
@@ -165,6 +175,8 @@
         <p>© 2025 Danielle Jack. All Rights Reserved.</p>
     </footer>
 
+
+    <!-- Modal preset -->
     <div id="projectModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -172,7 +184,7 @@
             <h2 id="modalTitle">Project Title</h2>
             <p id="modalTech" class="modal-tech-stack">Tech Stack</p>
             <p id="modalDesc">Project description goes here...</p>
-            <a id="modalLink" href="#" target="_blank" class="btn-primary">View Project</a>
+            <a id="modalLink" href="#" class="btn-primary">View Project</a>
         </div>
     </div>
 

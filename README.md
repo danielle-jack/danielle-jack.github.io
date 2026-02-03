@@ -1,4 +1,4 @@
-# Hi, I'm Danielle Jack! 🎨
+# Hi, I'm Danielle Jack! ✨
 
 > Welcome to the repo for my personal portfolio.
 > **[See the live site here](https://danielle-jack.github.io)**
@@ -28,12 +28,12 @@ Here are a few projects I'm involved in that I wanted to highlight. This is just
 **What it is:** An educational hub for students interested in STEM.
 **My Role:** I designed the site architecture and implemented interactive features like career quizzes to help students find their path.
 
-## 📬 Let's Connect
+## Let's Connect
 I'm currently looking for junior roles in **Frontend Development** or **UI/UX Design**. If you like what you see, let's chat!
 
 * **Email:** [djack.IT@outlook.com](mailto:djack.IT@outlook.com)
 * **LinkedIn:** [linkedin.com/in/danielle-jack25](https://www.linkedin.com/in/danielle-jack25)
-* **Location:** Metro Atlanta
+* **Location:** Metro Atlanta and open to relocation
 
 ---
 *Thanks for stopping by!*

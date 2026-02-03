@@ -34,7 +34,7 @@ h1, h2, h3 {
 
 a { text-decoration: none; transition: 0.3s; }
 
-/* --- Navigation [cite: 1, 61] --- */
+/* --- Navigation --- */
 /* --- Navigation Updates --- */
 nav {
     display: flex;
@@ -60,17 +60,17 @@ nav {
 
 /* This is the class Javascript will add when you scroll down */
 nav.scrolled {
-    /* Keep background transparent (or add slight blur for readability) */
+    /* Keep background transparent */
     background-color: rgba(255, 255, 255, 0.1); 
     backdrop-filter: blur(10px); /* Optional: blurs the image behind the text */
     
-    /* The Outline you requested */
+    /* Outline */
     border-bottom: 2px solid var(--accent-red); 
 }
 
-/* Ensure links are readable against your background image */
+/* Ensure links are readable against background image */
 .nav-links a { 
-    color: var(--primary-text); /* Change to #fff if your background image is dark */
+    color: var(--primary-text); /* Change to #fff if background image is dark */
     font-weight: 600; 
 }
 
@@ -95,12 +95,12 @@ nav.scrolled {
 
 /* --- SECTIONS: Massive Padding Added Here --- */
 section {
-    padding: 100px 10%; /* Creates the large gaps seen in PDF */
+    padding: 100px 10%; /* Creates the large gaps like in Figma design */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- Hero Section [cite: 6-11] --- */
+/* --- Hero Section --- */
 #hero {
     display: flex;
     align-items: center;
@@ -146,7 +146,6 @@ section {
     height: 350px;
     background-color: #eee;
     border-radius: 50%;
-    /* This mimics the sketch in your PDF Page 1 */
     border: 2px solid #333; 
 }
 
@@ -167,7 +166,7 @@ section {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Adds a little pop */
 }
 
-/* --- About Section [cite: 12-18] --- */
+/* --- About Section  --- */
 #about h2 { font-size: 2.5rem; margin-bottom: 40px; }
 
 .about-content {
@@ -233,7 +232,7 @@ section {
     line-height: 1.6;
 }
 
-/* --- Projects Section [cite: 85-93] --- */
+/* --- Projects Section --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -251,7 +250,7 @@ section {
 
 .project-card:hover { transform: translateY(-5px); }
 
-/* --- Project Grid Thumbnail Images --- */
+/* --- PROJECT THUMBNAIL IMAGES --- */
 
 /* 1. Common Settings for All Thumbnails */
 .project-thumbnail {
@@ -274,23 +273,23 @@ section {
 }
 
 .thumbnail-chronic {
-    background-image: url('chronic-compass.jpg');
+    background-image: url('Files/chronic_compass.png');
 }
 
 .thumbnail-stem {
-    background-image: url('stem-pathfinder.jpg');
+    background-image: url('Files/stempathfinderai.png');
 }
 
 .thumbnail-lofty {
-    background-image: url('lofty-pursuits.jpg');
+    background-image: url('Files/lofty_logo.png');
 }
 
 .thumbnail-code {
-    background-image: url('bitbucket-code.jpg');
+    background-image: url('Files/webapp_portfolio.png');
 }
 
 .thumbnail-vr {
-    background-image: url('vr-unity.jpg');
+    background-image: url('Files/vr_presentation.gif');
 }
 
 .thumbnail-folio {
@@ -306,7 +305,7 @@ section {
     color: var(--primary-text);
 }
 
-/* --- Contact Section [cite: 47-60] --- */
+/* --- Contact Section --- */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -324,7 +323,7 @@ input, textarea {
     font-family: inherit;
 }
 
-/* --- Footer [cite: 57-58] --- */
+/* --- Footer --- */
 footer {
     text-align: center;
     padding: 50px;
@@ -456,3 +455,68 @@ footer {
     from {opacity: 0; transform: translateY(20px);}
     to {opacity: 1; transform: translateY(0);}
 }
+
+/* --- Case Study Pages --- */
+
+.case-study-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: transparent;
+}
+
+.cs-title { font-size: 3rem; margin-bottom: 10px; }
+.cs-subtitle { font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto 40px auto; }
+
+/* Meta Data Grid (Role, Tools, etc.) */
+.cs-meta-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.meta-item strong { display: block; color: var(--accent-red); font-size: 0.9rem; text-transform: uppercase; }
+.meta-item p { margin: 5px 0 0 0; }
+
+.cs-hero-img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Content Blocks */
+.case-study-content {
+    max-width: 800px; /* Narrower for easier reading */
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.cs-block { margin-bottom: 60px; }
+.cs-block h2 { font-size: 2rem; color: var(--primary-text); margin-bottom: 20px; }
+.cs-block p { font-size: 1.1rem; line-height: 1.8; color: #444; }
+
+/* Image Gallery (Side by Side) */
+.cs-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0 10px 0;
+}
+
+.cs-gallery img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+.next-project { text-align: center; padding: 50px; background: #fafafa; }
