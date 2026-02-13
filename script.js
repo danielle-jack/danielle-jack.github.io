@@ -15,11 +15,19 @@ function openModal(card) {
     const desc = card.getAttribute("data-desc");
     const link = card.getAttribute("data-link");
 
+
+    // show projects button only if link exists
+    if (link && link !== "#" && link !== "") {
+        modalLink.href = link;
+        modalLink.style.display = "inline-block";
+    } else {
+        modalLink.style.display = "none";
+    }
+
     // 2. Populate the modal with that data
     modalTitle.innerText = title;
     modalTech.innerText = tech;
     modalDesc.innerText = desc;
-    modalLink.href = link;
     
     // Check if an image is provided, otherwise use a placeholder color
     if (image && image !== "") {
